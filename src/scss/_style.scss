@@ -224,17 +224,23 @@ header {
         }
     }
 
-    .navigation {
-        display: block;
-        width: 100%;
+    .mobile-navigation {
         max-height: 0;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
+
+        @include respond-min($screen-medium) {
+            max-height: none;
+            transition: none;
+        }
+    }
+
+    .navigation {
+        display: block;
+        width: 100%;
         margin: 0;
 
         @include respond-min($screen-medium) {
-            max-height: 7rem;
-            transition: none;
             position: relative;
             display: flex;
             flex: 1 0 auto;
