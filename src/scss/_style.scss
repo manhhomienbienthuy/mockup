@@ -24,7 +24,7 @@ main {
     padding-top: 1rem;
 
     @include respond-min($screen-medium) {
-        padding-top: 2em;
+        padding-top: 2rem;
     }
 }
 
@@ -127,7 +127,7 @@ p {
 
 .container {
     @include clearfix;
-    padding: 5px;
+    padding: 0.5rem;
 
     @include respond-min($screen-medium) {
         margin: 0 auto;
@@ -159,6 +159,7 @@ header {
         display: flex;
         flex-wrap: wrap;
         background: $true-white;
+        padding: 0;
     }
 
     .logo {
@@ -233,6 +234,10 @@ header {
             max-height: none;
             transition: none;
         }
+
+        &.active {
+            max-height: 50rem;
+        }
     }
 
     .navigation {
@@ -247,10 +252,6 @@ header {
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
-        }
-
-        &.active {
-            max-height: 50rem;
         }
 
         li {

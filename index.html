@@ -180,6 +180,34 @@
       to this principle of selection: he rejects pleasures to secure
       other greater pleasures, or else he endures pains to avoid worse
       pains."</p>
+
+      <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">shout</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="s2">"aaa"</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">word</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"!"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">shout</span><span class="p">())</span> <span class="c1"># output: AAA!</span>
+
+<span class="c1"># Bởi vì hàm cũng là đối tượng nên chúng ta có thể gán nó cho các</span>
+<span class="c1"># biến như những đối tượng khác.</span>
+<span class="n">scream</span> <span class="o">=</span> <span class="n">shout</span>
+
+<span class="c1"># Như bạn đã thấy rằng, chúng ta không dùng dấu ngoặc, bởi vì</span>
+<span class="c1"># chúng ta không gọi hàm, mà chúng ta đang gán hàm cho biến khác</span>
+<span class="c1"># (scream).  Sau khi gán, chúng ta có thể gọi hàm shout từ biến</span>
+<span class="c1"># scream.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scream</span><span class="p">())</span> <span class="c1"># output: AAA!</span>
+
+<span class="c1"># Không chỉ gán biến, chúng ta còn có thể xoá hàm như xoá những</span>
+<span class="c1"># đối tượng thông thường khác.</span>
+<span class="k">del</span> <span class="n">shout</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">shout</span><span class="p">())</span>
+<span class="k">except</span> <span class="ne">NameError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="c1"># output: name 'shout' is not defined</span>
+
+<span class="c1"># Tuy nhiên, chúng ta vẫn có thể gọi hàm thông qua biến scream.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">scream</span><span class="p">())</span> <span class="c1"># output: AAA!</span>
+</pre></div>
   </div>
 </main>
 
