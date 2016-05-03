@@ -5,10 +5,12 @@ $text-light: #888;
 $true-white: #fff;
 $blue: #2e5e86;
 $gray-line: #eaeaea;
-$gray-bg: #fafafa;
+$gray-bg: #f8f8f8;
 $selection-bg: #b3d4fc;
 
 $img-path: '../images/';
+$screen-medium: 48em;
+$screen-large: 70em;
 
 // Media queries mixins
 @mixin respond-min ($width) {
@@ -33,29 +35,7 @@ $img-path: '../images/';
 }
 
 @mixin monospace {
-    font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
-
-// Font size mixins
-html {
-    font-size: 62.5%;
-}
-
-@mixin font-size ($size: 16) {
-    font-size: $size + px;
-    font-size: $size/10 + rem;
-}
-
-// Boilerplate helper mixins
-@mixin visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 @mixin clearfix {
@@ -66,33 +46,5 @@ html {
     }
     &:after {
         clear: both;
-    }
-}
-
-@mixin svg-image ($name) {
-    background-image: url('../img/'+$name+'.png');
-    .mdzr-svg & {
-        background-image: url('../img/'+$name+'.svg');
-    }
-}
-
-// Blue link mixin
-@mixin link-blue {
-    color: $blue;
-    text-decoration: none;
-
-    &:visited {
-        color: $blue;
-    }
-
-    &:hover,
-    &:active,
-    &:focus {
-        color: lighten($blue, 20%);
-        text-decoration: underline;
-    }
-
-    .active & {
-        color: lighten($blue, 20%);
     }
 }

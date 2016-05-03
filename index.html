@@ -4,306 +4,199 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="dist/css/vpyeu.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
-<title>Test gulp</title>
+<title>Lorem Ipsum</title>
 
 <header>
   <div class="container">
-  	<a href="#" class="logo"></a>
+    <a href="#" class="logo">Aprigi</a>
     <p class="meta">This is a meta description. It will be used for slogan.</p>
-  	<div class="navigation-button">
-  		<a href="#">
-        <i class="fa fa-bars"></i>
-      </a>
-  	</div>
 
-  	<nav role="navigation">
-  		<ul class="navigation">
-  			<li class="active">
-  				<a href="#">Overview</a>
-  			</li>
-  			<li>
-  				<a href="#">Download</a>
-  			</li>
-  			<li>
-  				<a href="#">Documentation</a>
-  			</li>
-  			<li>
-  				<a href="#">News</a>
-  			</li>
-        <li>
-  				<a href="#">Community</a>
-  			</li>
-        <li>
-  				<a href="#">Code</a>
-  			</li>
-        <li>
-  				<a href="#">About</a>
-  			</li>
-        <li>
-  				<a href="#">Donate</a>
-  			</li>
-  		</ul>
-  	</nav>
+    <nav role="navigation">
+      <ul class="navigation">
+        <li class="active"><a href="#!">Lorem</a>
+        <li><a href="#!">Ipsum</a>
+        <li><a href="#!">Dolor</a>
+        <li><a href="#!">Sit</a>
+        <li><a href="#!">Amet</a>
+        <li><a href="#!">Consectetur</a>
+        <li><a href="#!">Adipiscing</a>
+        <li><a href="#!">Elit</a>
+      </ul>
+    </nav>
   </div>
 </header>
 
 <main>
-  <div class="container full-width">
-<p>Từ khóa <code>this</code> của JavaScript là một trong những khái niệm cơ bản nhưng cũng dễ gây nhầm lẫn nhất của ngôn ngữ này. Trong bài viết này, chúng ta sẽ dần dần tìm hiểu và làm sáng tỏ <code>this</code>, sao cho từ bây giờ, bạn không cần phải lo lắng về nó nữa. Chúng ta sẽ tìm hiểu cách sử dụng <code>this</code> một cách chính xác trong các tình huống khác nhau, kể cả những trường hợp nhạy cảm, nơi mà <code>this</code> rất khó nắm bắt.</p> <p>Về cơ bản, chúng ta sử dụng <code>this</code> tương tự như cách mà chúng ta sử dụng đại từ nhân xưng trong tiếng Anh. Ví dụ câu tiếng Anh như sau:</p> <blockquote> <p>John is running fast because <strong>he</strong> is trying to catch the train.</p> </blockquote> <p>Đại từ nhân xưng "he" trong câu này, là để chỉ John. Chúng ta có thể viết nó lại như sau mà ý nghĩa không thay đổi:</p> <blockquote> <p>John is running fast because <strong>John</strong> is trying to catch the train.</p> </blockquote> <p>Tuy nhiên, chúng ta không cần thiết phải gọi lại John trong tình huống này, như vậy câu bị lặp lại và nghe không được hay lắm. Trong trường hợp này, chúng ta có thể dùng đại từ nhân xưng để thay thế, câu văn nghe sẽ hay hơn.</p> <p>Cũng tương tự như vậy, trong JavaScript, chúng ta dùng từ khóa <code>this</code> để đại diện cho một đối tượng. Đối tượng đó là chủ thế của ngữ cảnh, hoặc là chủ thế của code đang được chạy.</p> <p>Chúng ta hãy xem xét ví dụ sau:</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">firstName</span><span class="o">:</span> <span class="s2">"Anh"</span><span class="p">,</span>
-<span class="nx">lastName</span><span class="o">:</span> <span class="s2">"Tranngoc"</span><span class="p">,</span>
-<span class="nx">fullName</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// Việc sử dụng "this" cũng tương tự như việc sử dụng "he"</span>
-<span class="c1">// trong câu tiếng Anh ở trên.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">);</span>
-<span class="c1">// Chúng ta cũng có thể viết thế này.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">person</span><span class="p">.</span><span class="nx">lastName</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
-</pre></div> <p>Nếu chúng ta sử dụng <code>person.firstName</code> và <code>person.lastName</code> như ví dụ ở trên, code của chúng ta có thể sẽ trở nên khó hiểu. Tất nhiên, nếu chỉ có code đơn giản như ví dụ trên thì nó sẽ chạy tốt.</p> <p>Tuy nhiên, hãy thử tưởng tượng, sau một thời gian phát triển, code JavaScript của bạn đã khá lớn. Và chẳng biết vô tình hay cố ý, <code>person</code> ở trên là một biến cục bộ trong một hàm nào đó, và tồn tại một biến toàn cục khác cũng có tên là <code>person</code>.</p> <p>Lúc này, nếu như có lỗi xảy ra, việc debug có thể khá khó khăn. Rất có thể, bạn sẽ mất kha khá thời gian thắc mắc xem, việc tham chiếu <code>person.firstName</code> có thể sẽ gọi đến thuộc tính <code>firstName</code> của biến toàn cục hay biến cục bộ khi có 2 biến với tên giống nhau.</p> <p>Để tránh tự làm khó mình (và làm khó cả những người cùng team), chúng ta nên sử dụng từ khóa <code>this</code>, không chỉ vì sự thẩm mỹ mà còn vì sự chính xác. Việc sử dụng <code>this</code> làm code của chúng ta rõ ràng hơn, giống như đại từ nhân xưng trong tiếng Anh vậy.</p> <p>Cũng giống như đại từ nhân xưng "he" dùng để chỉ các tiền đề (danh từ mà đại từ đó chỉ đến), từ khóa <code>this</code> của JavaScript cũng tương tự, được sử dụng để tham chiếu đến các đối tượng mà hàm (nơi mà <code>this</code> được sử dụng) bị ràng buộc.</p> <p>Từ khóa <code>this</code> không chỉ tham chiếu đến đối tượng, mà nó còn chứa giá trị của đối tượng đó. Cũng như một đại từ nhân xưng, <code>this</code> có thể hiểu là một sự thay thế rõ ràng để tham chiếu đến các đối tượng ở trong <strong>ngữ cảnh</strong> (đối tượng tiền đề). Chúng ta sẽ tìm hiểu thêm về ngữ cảnh ở những phần sau.</p> <h1>Những điều cơ bản về từ khóa <code>this</code> của JavaScript</h1> <p>Trước hết, bạn phải hiểu rằng, tất cả các hàm của JavaScript đều có thuộc tính, giống như mọi đối tượng khác. Và khi một hàm được thực thi, nó sẽ có thuộc tính <code>this</code> - một biến với giá trị là <strong>đối tượng đã gọi hàm sử dụng <code>this</code></strong>.</p> <p><code>this</code> luôn luôn tham chiếu (và có giá trị của) đối tượng - một đối tượng duy nhất - và nó thường được sử dụng bên trong hàm hay phương thức, mặc dù nó có thể dùng được một cách toàn cục bên ngoài hàm.</p> <p>Lưu ý rằng, nếu chúng ta sử dụng <strong><a href="http://www.w3schools.com/js/js_strict.asp">strict mode</a></strong>, <code>this</code> sẽ là undefined trong các hàm toàn cục và trong các hàm vô danh không ràng buộc đối tượng nào cả.</p> <p>Nếu <code>this</code> được sử dụng bên trong một hàm (tạm gọi là hàm A) thì nó sẽ chứa giá trị của đối tượng gọi hàm A. Chúng ta cần <code>this</code> để truy cập đến các phương thức và thuộc tính của đối tượng gọi hàm A, bởi vì chúng ta thường không biết tên của đối tượng đó. Thậm chí có lúc không có tên nào có thể dùng để tham chiếu đến đối tượng, chúng ta chỉ có thể dùng <code>this</code> mà thôi. Thực tế, <code>this</code> có thể coi là một tham chiếu đến "đối tượng tiền đề" - đối tượng gọi hàm.</p> <p>Dưới đây là một ví dụ rất cơ bản minh họa cho việc sử dụng <code>this</code> trong JavaScript:</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">firstName</span><span class="o">:</span> <span class="s2">"Anh"</span><span class="p">,</span>
-<span class="nx">lastName</span><span class="o">:</span> <span class="s2">"Tranngoc"</span><span class="p">,</span>
-<span class="c1">// Bởi vì từ khóa "this" được sử dụng trong phương thức</span>
-<span class="c1">// showFullName dưới đây, và phương thức này được định nghĩa trong</span>
-<span class="c1">// đối tượng person, "this" sẽ có giá trị của đối tượng person bởi</span>
-<span class="c1">// vì đối tượng này sẽ gọi showFullName()</span>
-<span class="nx">showFullName</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
+  <div class="container">
+    <h1>Lorem Ipsum</h1>
 
-<span class="nx">person</span><span class="p">.</span><span class="nx">showFullName</span><span class="p">();</span> <span class="c1">// Anh Tranngoc</span>
-</pre></div> <p>Một ví dụ khác về việc sử dụng <code>this</code> với jQuery:</p> <div class="codehilite"><pre><span></span><span class="c1">// Code rất thông dụng khi sử dụng jQuery</span>
-<span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// $(this) sẽ có giá trị của đối tượng button (`$("button")`) bởi</span>
-<span class="c1">// vì đối tượng này gọi phương thức click()</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">prop</span><span class="p">(</span><span class="s2">"name"</span><span class="p">));</span>
-<span class="p">});</span>
-</pre></div> <p>Việc sử dụng jQuery tương đối đặc biệt một chút. Cú pháp <code>$(this)</code> là cú pháp của jQuery cho từ khóa <code>this</code> của JavaScript, được sử dụng bên trong hàm vô danh (hàm này được thực thi trong phương thức <code>click</code> của button). Lý do <code>$(this)</code> được ràng buộc với button là bởi vì thư viện jQuery đã "gán" <code>$(this)</code> với đối tượng gọi phương thức <code>click</code>. Vì vậy, <code>$(this)</code> sẽ có giá trị của đối tượng button trong jQuery (<code>$("button")</code>), ngay cả khi <code>$(this)</code> được sử dụng bên trong một hàm vô danh và đúng ra nó không thể tham chiếu đến đối tượng "<code>this</code>" ở ngoài.</p> <p>Chú ý rằng, button là một phần tử DOM trong trang HTML, nên nó cũng là một đối tượng. Trong trường hợp này, nó là một đối tượng jQuery bởi vì nó được bao với hàm <code>$()</code> của jQuery.</p> <h2>Lưu ý với từ khóa <code>this</code></h2> <p>Nếu bạn đã hiểu những điều cơ bản về từ khóa <code>this</code> của JavaScript, bạn sẽ hiểu thêm một sự thật thú vị sau: <code>this</code> không được gán giá trị cho đến khi một đối tượng gọi một hàm có có chứa <code>this</code> bên trong. Để đơn giản, nhưng hàm có chứa <code>this</code> chúng ta sẽ gọi là "hàm this".</p> <p>Ngay cả khi <code>this</code> xuất hiện và tham chiếu đến đối tượng nơi mà nó được định nghĩa, nó không thực sự được gán giá trị cho đến khi một đối tượng gọi "hàm this". Và giá trị được gán đó chỉ dựa vào đối tượng đã gọi "hàm this". <code>this</code> có giá trị của đối tượng này trong hầu hết các hoàn cảnh. Tuy nhiên, vẫn có một vài trường hợp, giá trị của <code>this</code> rất khó xác định. Chúng ta sẽ dần dần tìm hiểu trong phần tiếp theo.</p> <h1>Sử dụng <code>this</code> một cách toàn cục</h1> <p>Với phạm vi toàn cục, khi code được thực thi ở trình duyệt, mọi biến và hàm toàn cục đều được định nghĩa trên đối tượng <code>window</code>. Vì vậy, khi chúng ta sử dụng <code>this</code> trong các hàm toàn cục, nó tham chiếu đến (và có giá trị của) đối tượng <code>window</code>. (Tuy nhiên, nếu sử dụng strict mode thì chúng ta không thể dùng <code>this</code> được.) Đối tượng <code>window</code> là container chính của toàn bộ code JavaScript của trang Web.</p> <p>Do đó:</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">firstName</span> <span class="o">=</span> <span class="s2">"Anh"</span><span class="p">,</span> <span class="nx">lastName</span> <span class="o">=</span> <span class="s2">"Tranngoc"</span><span class="p">;</span>
+    <h2>What is Lorem Ipsum?</h2>
 
-<span class="kd">function</span> <span class="nx">showFullName</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// "this" trong hàm này sẽ có giá trị của đối tượng window bởi vì</span>
-<span class="c1">// showFullName() là hàm được định nghĩa một cách toàn cục, cũng</span>
-<span class="c1">// như các biến firstName và lastName</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">);</span>
-<span class="p">}</span>
+    <p><strong>Lorem Ipsum</strong> is simply dummy text of the
+      printing and typesetting industry. Lorem Ipsum has been the
+      industry's standard dummy text ever since the 1500s, when an
+      unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but
+      also the leap into electronic typesetting, remaining essentially
+      unchanged. It was popularised in the 1960s with the release of
+      Letraset sheets containing Lorem Ipsum passages, and more
+      recently with desktop publishing software like Aldus PageMaker
+      including versions of Lorem Ipsum.</p>
 
-<span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">firstName</span><span class="o">:</span> <span class="s2">"VietPhuong"</span><span class="p">,</span>
-<span class="nx">lastName</span><span class="o">:</span> <span class="s2">"Doan"</span><span class="p">,</span>
-<span class="nx">showFullName</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// "this" trong hàm này tham chiếu đến đối tượng person, bởi</span>
-<span class="c1">// vì showFullName là hàm được gọi bởi đói tượng này</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
+    <h2>Why do we use it?</h2>
 
-<span class="nx">showFullName</span><span class="p">();</span> <span class="c1">// Anh Tranngoc</span>
+    <p>It is a long established fact that a reader will be distracted
+      by the readable content of a page when looking at its
+      layout. The point of using Lorem Ipsum is that it has a
+      more-or-less normal distribution of letters, as opposed to using
+      'Content here, content here', making it look like readable
+      English. Many desktop publishing packages and web page editors
+      now use Lorem Ipsum as their default model text, and a search
+      for 'lorem ipsum' will uncover many web sites still in their
+      infancy. Various versions have evolved over the years, sometimes
+      by accident, sometimes on purpose (injected humour and the
+      like).</p>
 
-<span class="c1">// window là đối tượng mà mọi biến và hàm toàn cục được định nghĩa</span>
-<span class="c1">// trên đó, vì thế:</span>
-<span class="nb">window</span><span class="p">.</span><span class="nx">showFullName</span><span class="p">();</span> <span class="c1">// Anh Tranngoc</span>
+    <h2>Where does it come from?</h2>
 
-<span class="c1">// "this" bên trong phương thức showFullName định nghĩa bên trong đối</span>
-<span class="c1">// tượng person sẽ tham chiếu đến đối tượng đó, vì vậy:</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">showFullName</span><span class="p">();</span> <span class="c1">// VietPhuong Doan</span>
-</pre></div> <h1>Một số trường hợp dễ nhầm lẫn về <code>this</code></h1> <p>Những điều về <code>this</code> rất cơ bản đã được trình bày ở trên. Tuy nhiên, khi làm việc thực tế, có những trường hợp <code>this</code> trở nên rất khó hiểu và khó nắm bắt. Trong phần này, chúng ta sẽ cùng tìm hiểu những tình huống như vậy, và cách xử lý tương ứng.</p> <h2>Một vài vấn đề về "ngữ cảnh"</h2> <p>"Ngữ cảnh" trong Javascritp cũng tượng tự như chủ ngữ trong câu tiếng Anh. Chúng ta sẽ lấy ví dụ một câu tiếng Anh như sau:</p> <blockquote> <p>John is the winner who returned the money.</p> </blockquote> <p>Chủ ngữ trong câu này là John, và chúng ta có thể nói rằng "ngữ cảnh" của câu là John bởi vì mục tiêu chính của câu, mọi sự tập trung đều nhằm đến John. Ở đây, đại từ nhân xưng "who" cũng là chỉ John. Chúng ta có thể ngắt mệnh đề ở đây. Chúng ta có một đối tượng đang được nói đến là John (ngữ cảnh hiện tại), chúng ta có thể chuyển mệnh đề sang cho một đối tượng khác (ngữ cảnh mới).</p> <p>Tương tự, với JavaScript, chúng ta có:</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">firstName</span><span class="o">:</span> <span class="s2">"Anh"</span><span class="p">,</span>
-<span class="nx">lastName</span><span class="o">:</span> <span class="s2">"Tranngoc"</span><span class="p">,</span>
-<span class="nx">showFullName</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// "Ngữ cảnh"</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random
+      text. It has roots in a piece of classical Latin literature from
+      45 BC, making it over 2000 years old. Richard McClintock, a
+      Latin professor at Hampden-Sydney College in Virginia, looked up
+      one of the more obscure Latin words, consectetur, from a Lorem
+      Ipsum passage, and going through the cites of the word in
+      classical literature, discovered the undoubtable source. Lorem
+      Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
+      Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
+      written in 45 BC. This book is a treatise on the theory of
+      ethics, very popular during the Renaissance. The first line of
+      Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line
+      in section 1.10.32.</p><p>The standard chunk of Lorem Ipsum used
+      since the 1500s is reproduced below for those
+      interested. Sections 1.10.32 and 1.10.33 from "de Finibus
+      Bonorum et Malorum" by Cicero are also reproduced in their exact
+      original form, accompanied by English versions from the 1914
+      translation by H. Rackham.</p>
 
-<span class="c1">// "Ngữ cảnh", khi chúng ta gọi showFullName là đối tượng person, khi</span>
-<span class="c1">// chúng ta gọi showFullName cho đối tượng này.  Và "this" trong</span>
-<span class="c1">// phương thức này sẽ có giá trị của đối tượng person.</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">showFullName</span><span class="p">();</span> <span class="c1">// Anh Tranngoc</span>
+    <h2>Where can I get some?</h2>
 
-<span class="c1">//  Nếu chúng ta gọi showFullName với đối tượng khác:</span>
-<span class="kd">var</span> <span class="nx">anotherPerson</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">firstName</span><span class="o">:</span> <span class="s2">"VietPhuong"</span><span class="p">,</span>
-<span class="nx">lastName</span><span class="o">:</span> <span class="s2">"Doan"</span>
-<span class="p">};</span>
+    <p>There are many variations of passages of Lorem Ipsum available,
+      but the majority have suffered alteration in some form, by
+      injected humour, or randomised words which don't look even
+      slightly believable. If you are going to use a passage of Lorem
+      Ipsum, you need to be sure there isn't anything embarrassing
+      hidden in the middle of text. All the Lorem Ipsum generators on
+      the Internet tend to repeat predefined chunks as necessary,
+      making this the first true generator on the Internet. It uses a
+      dictionary of over 200 Latin words, combined with a handful of
+      model sentence structures, to generate Lorem Ipsum which looks
+      reasonable. The generated Lorem Ipsum is therefore always free
+      from repetition, injected humour, or non-characteristic words
+      etc.</p>
 
-<span class="c1">// Chúng ta có thể sử dụng phương thức apply để gán giá trị "this" một</span>
-<span class="c1">// cách rõ ràng hơn trong phương thức apply.  "this" sẽ có giá trị của</span>
-<span class="c1">// bất cứ thứ gì gọi hàm this.  Vì thế:</span>
-<span class="nx">person</span><span class="p">.</span><span class="nx">showFullName</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">anotherPerson</span><span class="p">);</span> <span class="c1">// VietPhuong Doan</span>
+    <h3>The standard Lorem Ipsum passage, used since the 1500s</h3>
 
-<span class="c1">// Ngữ cảnh ở đây đã thay đổi thành anotherPerson bởi vì đây là đối</span>
-<span class="c1">// tượng gọi phương thức person.showFullName() thông qua phương thức</span>
-<span class="c1">// apply()</span>
-</pre></div> <p>Điểm cốt yếu ở đây là đối tượng gọi "hàm this" sẽ ở trong ngữ cảnh, và chúng ta có thể thay đổi ngữ cảnh bằng cách gọi hàm this bằng đối tượng khác. Đây sẽ là đối tượng trong ngữ cảnh mới.</p> <p>Dưới đây là một vài tình huống mà <code>this</code> sẽ trở nên rất khó nắm bắt, tất cả đều bắt nguồn từ việc ngữ cảnh đã thay đổi.</p> <h2>Sử dụng <code>this</code> trong phương thức được truyền như callback</h2> <p>Mọi chuyện sẽ rối tung rối mù khi chúng ta truyền phương thức (có sử dụng <code>this</code>) như một tham số để sử dụng như callback. Ví dụ:</p> <div class="codehilite"><pre><span></span><span class="c1">// Chúng ta có một đối tượng đơn giản với phương thức clickHandler.</span>
-<span class="c1">// Đây là phương thức là chúng ta muốn gọi khi một button được click.</span>
-<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"T. Woods"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">37</span><span class="p">},</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"P. Mickelson"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">43</span><span class="p">}</span>
-<span class="p">],</span>
-<span class="nx">clickHandler</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// Chọn ngẫu nhiên 0 hoặc 1</span>
-<span class="kd">var</span> <span class="nx">randomNum</span> <span class="o">=</span> <span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+      aute irure dolor in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum."</p>
 
-<span class="c1">// Dòng dưới đây sẽ in ra tên và tuối của một user ngẫu nhiên</span>
-<span class="c1">// lấy từ array</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">randomNum</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">randomNum</span><span class="p">].</span><span class="nx">age</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
+    <h3>Section 1.10.32 of "de Finibus Bonorum et Malorum", written by
+      Cicero in 45 BC</h3>
 
-<span class="c1">// button được bảo bởi hàm jQuery $, nên nó trở thành một đối tượng</span>
-<span class="c1">// jQuery.  Và output sẽ la undefined bởi vì không có thuộc tính data</span>
-<span class="c1">// cho đối tượng button</span>
+    <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+      accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+      quae ab illo inventore veritatis et quasi architecto beatae
+      vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+      voluptas sit aspernatur aut odit aut fugit, sed quia
+      consequuntur magni dolores eos qui ratione voluptatem sequi
+      nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+      sit amet, consectetur, adipisci velit, sed quia non numquam eius
+      modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+      voluptatem. Ut enim ad minima veniam, quis nostrum
+      exercitationem ullam corporis suscipit laboriosam, nisi ut
+      aliquid ex ea commodi consequatur? Quis autem vel eum iure
+      reprehenderit qui in ea voluptate velit esse quam nihil
+      molestiae consequatur, vel illum qui dolorem eum fugiat quo
+      voluptas nulla pariatur?"</p>
 
-<span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">clickHandler</span><span class="p">);</span> <span class="c1">// Cannot read property '0' of undefined</span>
-</pre></div> <p>Với code trên, bởi vì button (<code>$("button")</code>) là một đối tượng, và chúng ta truyền phương thức <code>user.clickHandler</code> vào phương thức <code>click</code> của button như một callback. Và chúng ta đã biết rằng, <code>this</code> trong phương thức <code>user.clickHandler</code> sẽ không tham chiếu đến đối tượng <code>user</code> nữa mà bây giờ, nó sẽ tham chiếu đến đối tượng mà nó được gọi. Trong trường hợp này, nó sẽ tham chiếu đến đối tượng button, bởi vì phương thức <code>user.clickHandler</code> sẽ được thực thi trong phương thức <code>click</code> của đối tượng button.</p> <p>Lưu ý rằng, kể cả chúng ta đã gọi phương thức <code>clickHandler()</code> kèm với đối tượng <code>user</code> (điều này là bắt buộc bởi <code>clickHandler</code> là phương thức của <code>user</code>), bản thân phương thức <code>clickHandler</code> được thực thi với đối tượng là button, và đây là ngữ cảnh của nó. Vì vậy, <code>this</code> sẽ tham chiếu đến đối tượng này (<code>$("button")</code>).</p> <p><strong>Giải pháp</strong></p> <p>Bởi vì chúng ta cần <code>this.data</code> tham chiếu đến thuộc tính <code>data</code> của đối tượng <code>user</code>, chúng ta có thể sử dụng các phương thức <code>bind</code>, <code>apply</code>, <code>call</code> để chỉ định giá trị của <code>this</code>.</p> <p>Để giải quyết vấn đề trên, chúng ta có thể sử dụng <code>bind</code>. Thay vì:</p> <div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">clickHandler</span><span class="p">);</span>
-</pre></div> <p>Chúng ta cần <strong>bind</strong> phương thức <code>clickHandler</code> vào đối tượng <code>user</code> như sau:</p> <div class="codehilite"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">"button"</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="nx">user</span><span class="p">.</span><span class="nx">clickHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">user</span><span class="p">));</span> <span class="c1">// P. Mickelson 43</span>
-</pre></div> <h2>Sử dụng <code>this</code> trong closure</h2> <p>Một trường hợp khác cũng rất dễ nhầm lẫn <code>this</code>, đó là chúng ta sử dụng nó ở một hàm lồng trong hàm khác (một closure). Một điểm cần lưu ý là closure không thể truy cập biến <code>this</code> ở bên ngoài thông qua từ khóa <code>this</code>, bởi vì <code>this</code> chỉ có thể truy cập ở phạm vi chính hàm mà nó được sử dụng mà thôi. Ví dụ:</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">tournament</span><span class="o">:</span> <span class="s2">"The Masters"</span><span class="p">,</span>
-<span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"T. Woods"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">37</span><span class="p">},</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"P. Mickelson"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">43</span><span class="p">}</span>
-<span class="p">],</span>
+    <h3>1914 translation by H. Rackham</h3>
 
-<span class="nx">clickHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="c1">// Việc sử dụng this.data ở đây không vấn đề gì, bởi vì "this"</span>
-<span class="c1">// tham chiếu đến đối tượng user và data là một thuộc tính của</span>
-<span class="c1">// đối tượng.</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// Nhưng ở trong hàm vô danh này (nó được truyền cho</span>
-<span class="c1">// phương thức forEach), "this" không tham chiếu đến đối</span>
-<span class="c1">// tượng user nữa.  Hàm này không thể truy cập "this" của</span>
-<span class="c1">// hàm bên ngoài.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"What is This referring to? "</span> <span class="o">+</span> <span class="k">this</span><span class="p">);</span> <span class="c1">//[object Window]</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" is playing at "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">tournament</span><span class="p">);</span>
-<span class="c1">// T. Woods is playing at undefined</span>
-<span class="c1">// P. Mickelson is playing at undefined</span>
-<span class="p">})</span>
-<span class="p">}</span>
+    <p>"But I must explain to you how all this mistaken idea of
+      denouncing pleasure and praising pain was born and I will give
+      you a complete account of the system, and expound the actual
+      teachings of the great explorer of the truth, the master-builder
+      of human happiness. No one rejects, dislikes, or avoids pleasure
+      itself, because it is pleasure, but because those who do not
+      know how to pursue pleasure rationally encounter consequences
+      that are extremely painful. Nor again is there anyone who loves
+      or pursues or desires to obtain pain of itself, because it is
+      pain, but because occasionally circumstances occur in which toil
+      and pain can procure him some great pleasure. To take a trivial
+      example, which of us ever undertakes laborious physical
+      exercise, except to obtain some advantage from it? But who has
+      any right to find fault with a man who chooses to enjoy a
+      pleasure that has no annoying consequences, or one who avoids a
+      pain that produces no resultant pleasure?"</p>
 
-<span class="p">}</span>
+    <h3>Section 1.10.33 of "de Finibus Bonorum et Malorum", written by
+    Cicero in 45 BC</h3>
 
-<span class="nx">user</span><span class="p">.</span><span class="nx">clickHandler</span><span class="p">();</span> <span class="c1">// What is "this" referring to? [object Window]</span>
-</pre></div> <p><code>this</code> bên trong hàm vô danh không thể truy cập <code>this</code> của hàm bên ngoài, nên nó sẽ được gán cho đối tượng <code>window</code> (nếu không sử dụng strict mode).</p> <p><strong>Giải pháp</strong></p> <p>Để ứng phó với vấn đề sử dụng <code>this</code> bên trong hàm vô danh được truyền cho phương thức <code>forEach</code>, chúng ta sử dụng một kỹ thuật rất phổ biến trong JavaScript, đó là gán giá trị của <code>this</code> cho một biến khác trước khi chúng ta vào hàm <code>forEach</code>.</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">tournament</span><span class="o">:</span> <span class="s2">"The Masters"</span><span class="p">,</span>
-<span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"T. Woods"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">37</span><span class="p">},</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"P. Mickelson"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">43</span><span class="p">}</span>
-<span class="p">],</span>
+    <p>"At vero eos et accusamus et iusto odio dignissimos ducimus qui
+      blanditiis praesentium voluptatum deleniti atque corrupti quos
+      dolores et quas molestias excepturi sint occaecati cupiditate
+      non provident, similique sunt in culpa qui officia deserunt
+      mollitia animi, id est laborum et dolorum fuga. Et harum quidem
+      rerum facilis est et expedita distinctio. Nam libero tempore,
+      cum soluta nobis est eligendi optio cumque nihil impedit quo
+      minus id quod maxime placeat facere possimus, omnis voluptas
+      assumenda est, omnis dolor repellendus. Temporibus autem
+      quibusdam et aut officiis debitis aut rerum necessitatibus saepe
+      eveniet ut et voluptates repudiandae sint et molestiae non
+      recusandae. Itaque earum rerum hic tenetur a sapiente delectus,
+      ut aut reiciendis voluptatibus maiores alias consequatur aut
+      perferendis doloribus asperiores repellat."</p>
 
-<span class="nx">clickHandler</span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// Để lưu trữ giá trị của "this" (đang tham chiếu đối tương</span>
-<span class="c1">// user), chúng ta gán nó cho một biến khác để sử dụng về sau.</span>
-<span class="kd">var</span> <span class="nx">theUserObj</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-<span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">person</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// Bây giờ chúng ta có thể sử dụng theUserObj.tournament</span>
-<span class="c1">// thay vì this.tournament</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" is playing at "</span> <span class="o">+</span> <span class="nx">theUserObj</span><span class="p">.</span><span class="nx">tournament</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">}</span>
-<span class="p">}</span>
+    <h3>1914 translation by H. Rackham</h3>
 
-<span class="nx">user</span><span class="p">.</span><span class="nx">clickHandler</span><span class="p">();</span>
-<span class="c1">// T. Woods is playing at The Masters</span>
-<span class="c1">// P. Mickelson is playing at The Masters</span>
-</pre></div> <p>Rất nhiều người thường gán giá trị <code>this</code> cho biến khác có tên là <code>that</code>, có lẽ bởi vì ý nghĩa của chúng gần giống nhau, như ví dụ sau đây. Tuy nhiên, để code dễ đọc và dễ hiểu hơn, chúng ta nên gán <code>this</code> với một biến có tên dễ hiểu để chỉ đối tượng mà nó đang tham chiếu.</p> <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="k">this</span><span class="p">;</span>
-</pre></div> <h2>Sử dụng <code>this</code> khi phương thức được gán cho biến</h2> <p>Giá trị của <code>this</code> sẽ vượt xa sự tưởng tượng của chúng ta và được gán giá trị khác, nếu chúng ta gán phương thức sử dụng <code>this</code> cho một biến. Hãy xem ví dụ sau đây:</p> <div class="codehilite"><pre><span></span><span class="c1">// Biến data là biến toàn cục</span>
-<span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">[</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Samantha"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Alexis"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">14</span><span class="p">}</span>
-<span class="p">];</span>
-
-<span class="kd">var</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
-<span class="c1">// data ở đây là một thuộc tính của đối tượng user</span>
-<span class="nx">data</span><span class="o">:</span> <span class="p">[</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"T. Woods"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">37</span><span class="p">},</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"P. Mickelson"</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">43</span><span class="p">}</span>
-<span class="p">],</span>
-
-<span class="nx">showData</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
-<span class="c1">// chọn ngẫu nhiên 0 hoặc 1</span>
-<span class="kd">var</span> <span class="nx">randomNum</span> <span class="o">=</span> <span class="p">((</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">|</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="c1">// In ra một người chọn ngẫu nhiên từ user.data</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">randomNum</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">data</span><span class="p">[</span><span class="nx">randomNum</span><span class="p">].</span><span class="nx">age</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// gán phương thức cho một biến</span>
-<span class="kd">var</span> <span class="nx">showUserData</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">showData</span><span class="p">;</span>
-
-<span class="c1">// Khi chúng ta thực thi hàm showUserData, giá trị được in ra lại được</span>
-<span class="c1">// lấy ra từ biến data toàn cục, chứ không phải từ thuộc tính data của</span>
-<span class="c1">// đối tượng user.</span>
-<span class="nx">showUserData</span><span class="p">();</span> <span class="c1">// Samantha 12 (dữ liệu lấy từ biến data toàn cục)</span>
-</pre></div> <p><strong>Giải pháp</strong></p> <p>Chúng ta có thể giải quyết vấn đề trên bằng cánh chỉ định giá trị của <code>this</code> bằng phương thức <code>bind</code>:</p> <div class="codehilite"><pre><span></span><span class="c1">// Bind showData cho đối tượng user</span>
-<span class="kd">var</span> <span class="nx">showUserData</span> <span class="o">=</span> <span class="nx">user</span><span class="p">.</span><span class="nx">showData</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">user</span><span class="p">);</span>
-
-<span class="c1">// Bây giờ chúng ta sẽ lấy giá trị từ đối tượng user, vì "this" đã</span>
-<span class="c1">// được gán cho đối tượng này:</span>
-<span class="nx">showUserData</span><span class="p">();</span> <span class="c1">// P. Mickelson 43</span>
-</pre></div> <h2>Dùng <code>this</code> khi mượn phương thức</h2> <p>Việc mượn các phương thức là việc rất phổ biến trong viết code JavaScript. Và nếu bạn làm việc với JavaScript, thì chắc chắn bạn đã mượn các phương thức rất nhiều lần. Việc mượn các phương thức sẽ giúp chúng ta tiết kiệm thời gian phát triển những tính năng đã có người làm giúp chúng ta rồi. Tuy nhiên, tự tiện lợi đó đi kèm với một số vấn đề khi sử dụng <code>this</code>.</p> <div class="codehilite"><pre><span></span><span class="c1">// Chúng ta có 2 đối tượng.  Một đối tượng có phương thức avg() và đối</span>
-<span class="c1">// tượng còn lại không có.  Vì thế chúng ta sẽ mượn phương thức avg().</span>
-<span class="kd">var</span> <span class="nx">gameController</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">scores</span><span class="o">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">77</span><span class="p">],</span>
-<span class="nx">avgScore</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-<span class="nx">players</span><span class="o">:</span> <span class="p">[</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Tommy"</span><span class="p">,</span> <span class="nx">playerID</span><span class="o">:</span> <span class="mi">987</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">23</span><span class="p">},</span>
-<span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s2">"Pau"</span><span class="p">,</span> <span class="nx">playerID</span><span class="o">:</span> <span class="mi">87</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="mi">33</span><span class="p">}</span>
-<span class="p">]</span>
-<span class="p">}</span>
-
-<span class="kd">var</span> <span class="nx">appController</span> <span class="o">=</span> <span class="p">{</span>
-<span class="nx">scores</span><span class="o">:</span> <span class="p">[</span><span class="mi">900</span><span class="p">,</span> <span class="mi">845</span><span class="p">,</span> <span class="mi">809</span><span class="p">,</span> <span class="mi">950</span><span class="p">],</span>
-<span class="nx">avgScore</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-<span class="nx">avg</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-<span class="kd">var</span> <span class="nx">sumOfScores</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">scores</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">prev</span><span class="p">,</span> <span class="nx">cur</span><span class="p">,</span> <span class="nx">index</span><span class="p">,</span> <span class="nx">array</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">return</span> <span class="nx">prev</span> <span class="o">+</span> <span class="nx">cur</span><span class="p">;</span>
-<span class="p">});</span>
-
-<span class="k">this</span><span class="p">.</span><span class="nx">avgScore</span> <span class="o">=</span> <span class="nx">sumOfScores</span> <span class="o">/</span> <span class="k">this</span><span class="p">.</span><span class="nx">scores</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">// Nếu chúng ta chạy code dưới đây, thuộc tính gameController.avgScore</span>
-<span class="c1">// sẽ được gán giá trị trung bình của đối tượng appController</span>
-<span class="nx">gameController</span><span class="p">.</span><span class="nx">avgScore</span> <span class="o">=</span> <span class="nx">appController</span><span class="p">.</span><span class="nx">avg</span><span class="p">();</span>
-</pre></div> <p><code>this</code> trong phương thức <code>avg</code> không tham chiếu đến đối tượng <code>gameController</code> mà nó tham chiếu đến đối tượng <code>appController</code> bởi vì nó được gọi bởi <code>appController</code>.</p> <p><strong>Giải pháp</strong></p> <p>Để giải quyết vấn đề trên, và biến giá trị <code>this</code> trong <code>appController.avg()</code> tham chiếu đến <code>gameController</code>, chúng ta có thể sử dụng phương thức <code>apply</code>:</p> <div class="codehilite"><pre><span></span><span class="c1">// Lưu ý, chúng ta sử dụng phương thức apply(), nên tham số thứ 2 phải</span>
-<span class="c1">// là một array - tham số sẽ được truyền cho phương thức</span>
-<span class="c1">// appController.avg().</span>
-<span class="nx">appController</span><span class="p">.</span><span class="nx">avg</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">gameController</span><span class="p">,</span> <span class="nx">gameController</span><span class="p">.</span><span class="nx">scores</span><span class="p">);</span>
-
-<span class="c1">// avgScore được tính cho đối tượng gameController, ngay cả khi chúng</span>
-<span class="c1">// ta mượn phương thức avg() từ đối tượng appController.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gameController</span><span class="p">.</span><span class="nx">avgScore</span><span class="p">);</span> <span class="c1">// 46.4</span>
-
-<span class="c1">// appController.avgScore vẫn null, chỉ có gameController.avgScore</span>
-<span class="c1">// được tính toàn mà thôi.</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">appController</span><span class="p">.</span><span class="nx">avgScore</span><span class="p">);</span> <span class="c1">// null</span>
-</pre></div> <p>Đối tượng <code>gameController</code> mượn phương thức <code>avg()</code> từ đối tượng <code>appController</code>. Giá trị của <code>this</code> trong phương thức này sẽ được gán cho đối tượng <code>gameController</code> bởi vì chúng ta truyền đối tượng này là tham số đầu tiên của <code>apply</code>. Tham số đầu tiên của <code>apply</code> luôn được sử dụng là <code>this</code>.</p> <h1>Kết luận</h1> <p>Bài viết trình bày những hiểu biết về từ khóa <code>this</code> của JavaScript. Và tôi cũng trình thêm một số công cụ (<code>bind</code>, <code>apply</code>, v.v...) để gán giá trị cho <code>this</code> trong những tình huống đặc biệt.</p> <p>Như các bạn đã thấy, <code>this</code> có thể trở nên phức tạp trong một số tình huống mà ngữ cảnh ban đầu bị thay đổi. Tuy nhiên, có một điều không bao giờ thay đổi, đó là <code>this</code> được gán giá trị của đối tượng gọi hàm this.</p> <p>Hy vọng bài viết giúp ích các bạn trong quá trình code JavaScript của mình.</p> </div> <div style="clear: both;"></div>
-</div>
+    <p>"On the other hand, we denounce with righteous indignation and
+      dislike men who are so beguiled and demoralized by the charms of
+      pleasure of the moment, so blinded by desire, that they cannot
+      foresee the pain and trouble that are bound to ensue; and equal
+      blame belongs to those who fail in their duty through weakness
+      of will, which is the same as saying through shrinking from toil
+      and pain. These cases are perfectly simple and easy to
+      distinguish. In a free hour, when our power of choice is
+      untrammelled and when nothing prevents our being able to do what
+      we like best, every pleasure is to be welcomed and every pain
+      avoided. But in certain circumstances and owing to the claims of
+      duty or the obligations of business it will frequently occur
+      that pleasures have to be repudiated and annoyances
+      accepted. The wise man therefore always holds in these matters
+      to this principle of selection: he rejects pleasures to secure
+      other greater pleasures, or else he endures pains to avoid worse
+      pains."</p>
+  </div>
 </main>
 
 <footer>
   <div class="container">
     <ul class="links">
-      <li><a href="/about/us/">About us</a>
-      <li><a href="https://help.instagram.com/">Support</a>
-      <li><a href="http://blog.instagram.com/">Blog</a>
-      <li><a href="/press/">Press</a>
-      <li><a href="/developer/">API</a>
-      <li><a href="/about/jobs/">Jobs</a>
-      <li><a href="/legal/privacy/">Privacy</a>
-      <li><a href="/legal/terms/">Terms</a>
+      <li><a href="#!">Sed</a>
+      <li><a href="#!">Do</a>
+      <li><a href="#!">Eiusmod</a>
+      <li><a href="#!">Tempor</a>
+      <li><a href="#!">Incididunt</a>
+      <li><a href="#!">Ut</a>
+      <li><a href="#!">Labore</a>
+      <li><a href="#!">Dolore</a>
     </ul>
-    <p class="copyright">© 2016 Anh Tranngoc</p>
+    <p class="copyright">© 2016 Aprigi</p>
   </div>
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<script>
-  $(".navigation-mobile").click(function() {
-    $(".navigation").toggleClass("active");
-  });
-</script>
+<script data-main="dist/js/vpyeu.min.js" src="dist/js/lib/require.js"></script>
