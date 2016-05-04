@@ -43,9 +43,9 @@
         "new-cap": 2
     },
     "globals": {
-        "jQuery": true,
-        "$": true,
         "window": true,
-        "document": true
+        "document": true,
+        "requirejs": true,
+        "define": true
     }
 }

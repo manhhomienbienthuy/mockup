@@ -1,10 +1,10 @@
 define(['jquery'], function($) {
     class ScrollTopExport{
         constructor(window, body) {
-           this.body = $(body);
-           this.window = $(window);
-           this.offset = 300;
-           this.init();
+            this.body = $(body);
+            this.window = $(window);
+            this.offset = this.window.height() * 0.75;
+            this.init();
         }
 
         init() {
@@ -19,7 +19,7 @@ define(['jquery'], function($) {
                 }
             });
         }
-    };
+    }
 
     return new ScrollTopExport(window, 'body');
 });

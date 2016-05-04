@@ -16,7 +16,7 @@ define(['jquery'], function($) {
                 self.button.toggleClass('active');
             });
         }
-    };
+    }
 
     return new MobileMenuExport('header .navigation');
 });

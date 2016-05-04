@@ -1,12 +1,12 @@
 requirejs.config({
     paths: {
-        "jquery": "https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min",
-        "mobile-menu": "./mobile-menu.min",
-        "scroll-top": "./scroll-top.min"
+        'jquery': 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min',
+        'mobile-menu': './mobile-menu.min',
+        'scroll-top': './scroll-top.min'
     }
 });
 
-var mods = ["mobile-menu"];
+var mods = ['mobile-menu'];
 
 function getPageHeight() {
     var body = document.body;
@@ -17,7 +17,7 @@ function getPageHeight() {
 }
 
 if (getPageHeight() > window.innerHeight * 2) {
-    mods.push("scroll-top");
+    mods.push('scroll-top');
 }
 
 requirejs(mods);
