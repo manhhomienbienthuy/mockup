@@ -6,9 +6,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 <title>HTML test page</title>
 
-<header role="banner">
+<header role="banner" id="top">
   <div class="container">
-    <a href="#" class="logo">Aprigi</a>
+    <a href="#top" class="logo">Aprigi</a>
     <p class="meta">This is a meta description. It will be used for slogan.</p>
 
     <nav role="navigation">
@@ -385,46 +385,29 @@
 
     <h1 id="forms" class="anchor">Forms</h1>
 
-    <form action="#" class="form-settings">
+    <h2>Form without any class</h2>
+
+    <form action="#">
       <div>
-        <input type="hidden" name="hidden field" value="42">
+        <input type="hidden" name="hidden-field" value="42">
         This is a form containing various fields (with some initial
         values (defaults) set, so that you can see how input text
         looks like without actually typing it):
       </div>
 
       <div>
-        <label for="but">
-          Button:
-          <button class="button button-primary" type="submit" name="foo" value="bar">
-            A cool<br>button
-          </button>
-        </label>
-      </div>
-
-      <div>
-        <label for="f0">
-          Reset button:
-          <button type="reset" name="reset" class="button button-secondary">
-            Reset
-          </button>
-        </label>
-      </div>
-
-      <div>
-        <label for="f1">
+        <label>
           Single-line text input field:
-          <input id="f1" name="text" size="20"
-                 value="Default text." placeholder="This is placeholder">
         </label>
+        <input type="text" name="text" placeholder="This is placeholder">
       </div>
 
       <div>
-        <label for="f2">
+        <label>
           Multi-line text input field (textarea):
         </label>
-        <br>
-        <textarea id="f2" name="textarea" rows="2" cols="40">Default text.</textarea>
+        <textarea name="textarea"
+                  placeholder="This is placeholder for textarea"></textarea>
       </div>
 
       <div>
@@ -434,71 +417,184 @@
       </div>
 
       <fieldset>
-        <legend>Legend</legend>
+        <legend>Radio button</legend>
         <div>
-          <input id="f3" type="radio" name="radio" value="1">
-          <label for="f3">
-            Radio button 1
-          </label>
+          <input id="radio-option-1" type="radio" name="radio" value="1">
+          <label for="radio-option-1">Radio option 1</label>
         </div>
 
         <div>
-          <input id="f4" type="radio" name="radio" value="2" checked>
-          <label for="f4">
-            Radio button 2 (initially checked)
+          <input id="radio-option-2" type="radio" name="radio" value="2"
+                 checked="checked">
+          <label for="radio-option-2">Radio button 2 (initially checked)</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Checkbox</legend>
+        <div>
+          <input id="checkbox-option-1" type="checkbox" name="checkbox">
+          <label for="checkbox-option-1">Checkbox option 1</label>
+        </div>
+
+        <div>
+          <input id="checkbox-option-2" type="checkbox" name="checkbox"
+                 checked="checked">
+          <label for="checkbox-option-2">
+            Checkbox option 2 (initially checked)
           </label>
         </div>
       </fieldset>
 
       <fieldset>
-        <legend>Check those that apply</legend>
+        <legend>HTML5 inputs</legend>
+
         <div>
-          <input id="f5" type="checkbox" name="checkbox">
-          <label for="f5">
-            Checkbox 1
-          </label>
+          <label>Color input</label>
+          <input type="color" name="color">
         </div>
 
         <div>
-          <input id="f6" type="checkbox" name="checkbox2" checked>
-          <label for="f6">
-            Checkbox 2 (initially checked)
-          </label>
+          <label>Range input</label>
+          <input type="range" name="range">
+        </div>
+
+        <div>
+          <label>Date input</label>
+          <input type="date" name="date" placeholder="Date input">
+        </div>
+
+        <div>
+          <label>Month input</label>
+          <input type="month" name="month" placeholder="Month input">
+        </div>
+
+        <div>
+          <label>Week input</label>
+          <input type="week" name="week" placeholder="Week input">
+        </div>
+
+        <div>
+          <label>Datetime input</label>
+          <input type="datetime" name="datetime" placeholder="Datetime input">
+        </div>
+
+        <div>
+          <label>Datetime-local input</label>
+          <input type="datetime-local" name="datetime-local"
+                 placeholder="Datetime-local input">
+        </div>
+
+        <div>
+          <label>Tel input</label>
+          <input type="tel" name="tel"
+                 placeholder="Tel input">
         </div>
       </fieldset>
 
       <div>
-        <label for="f10">
+        <label>
           A <code>select</code> element with <code>size="1"</code>
           (dropdown box):
-          <select id="f10" name="select1">
-            <option>one
-            <option selected>two (default)
-            <option>three
-          </select>
         </label>
-      </div>
-
-      <div>
-        <label for="f11">
-          A <code>select</code> element with <code>size="3"</code>
-          (listbox):
-        </label><br>
-        <select id="f11" name="select2" size="3">
-          <option>one
-          <option selected>two (default)
-          <option>three
+        <select name="select">
+          <option>Option 1
+          <option selected>Option 2 (default)
+          <option>Option 3
         </select>
       </div>
 
       <div>
-        <label for="f99">
-          Submit button:
-        </label>
-        <button id="f99" type="submit" name="submit" class="button button-primary">
-          Just a test
+        <button type="submit" name="submit" class="button button-primary">
+          Primary submit
+        </button>
+        <button type="reset" name="reset" class="button button-secondary">
+          Reset
+        </button>
+        <button type="submit" name="foo" value="bar">
+          Default button
         </button>
       </div>
+    </form>
+
+    <h2>General form</h2>
+    <form method="post" action="" class="form-general">
+      <fieldset>
+        <input id="id_username" maxlength="30" name="username" type="text"
+               placeholder="Username">
+        <input id="id_email" name="email" type="email"
+               placeholder="Email address">
+        <input id="id_password1" name="password1" type="password"
+               placeholder="Password">
+      </fieldset>
+
+      <fieldset>
+        <select>
+          <option>Select example</option>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <label>
+          <input type="checkbox" />
+          Receive newsletter updates
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <button type="submit" class="button button-primary">Submit</button>
+      </fieldset>
+    </form>
+
+    <h2>Form input</h2>
+
+    <p>A form has only one input entry with <code>submit</code> inside.
+
+    <form class="form-input" action="#">
+      <input name="email" placeholder="Enter email" type="email">
+      <button type="submit">
+        <i class="fa fa-envelope-o"></i>
+        <span class="visuallyhidden">Subscribe</span>
+      </button>
+    </form>
+
+    <form action="#" class="form-input" role="search">
+      <input type="text" name="news-search" placeholder="Search">
+      <button type="submit">
+        <i class="fa fa-search"></i>
+        <span class="visuallyhidden">Search</span>
+      </button>
+    </form>
+
+    <p>Another example</p>
+
+    <form method="post" action="" class="form-input">
+      <div>
+        <label for="id_username">Username:</label>
+        <input id="id_username" maxlength="30" name="username" type="text"
+               placeholder="Enter username">
+      </div>
+      <div>
+        <label for="id_email">Email address:</label>
+        <input id="id_email" name="email" type="email"
+               placeholder="Enter your email">
+      </div>
+      <div>
+        <label for="id_password1">Password:</label>
+        <input id="id_password1" name="password1" type="password"
+               placeholder="Enter your password">
+      </div>
+      <div>
+        <label for="id_password2">Password (type again to catch typos):</label>
+        <input id="id_password2" name="password2" type="password"
+               placeholder="Enter your password again">
+      </div>
+      <p class="submit">
+          <input class="button button-primary" value="Register" type="submit">
+      </p>
     </form>
 
     <h1 id="tables" class="anchor">Tables</h1>
