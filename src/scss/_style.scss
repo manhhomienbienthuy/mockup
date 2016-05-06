@@ -151,7 +151,7 @@ table {
 mark {
     padding: 0.25em 0.5em;
     color: $text;
-    background: #fcff00;
+    background: $highlight-bg;
 }
 
 .container {
@@ -533,4 +533,10 @@ form {
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+.warning {
+    text-align: center;
+    background: $highlight-bg;
+    padding: 1rem 0;
 }

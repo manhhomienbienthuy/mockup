@@ -8,7 +8,7 @@ define(['jquery'], function($) {
         }
 
         init() {
-            this.button = $('<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>');
+            this.button = $('<a href="#top" class="back-to-top"><i class="fa fa-chevron-up"></i></a>');
             this.body.append(this.button);
 
             this.window.scroll(() => {
