@@ -6,14 +6,13 @@ define(['jquery'], function($) {
         }
 
         init() {
-            var self = this;
-            self.menu.addClass('mobile-navigation');
-            self.button = $('<div class="navigation-button"><a href="#"><i class="fa fa-bars"></i></a></div>');
-            self.button.insertBefore(self.menu.parent());
-            self.button.children('a').on( 'click', function(event){
+            this.menu.addClass('mobile-navigation');
+            this.button = $('<div class="navigation-button"><a href="#"><i class="fa fa-bars"></i></a></div>');
+            this.button.insertBefore(this.menu.parent());
+            this.button.children('a').on( 'click', (event) => {
                 event.preventDefault();
-                self.menu.toggleClass('active');
-                self.button.toggleClass('active');
+                this.menu.toggleClass('active');
+                this.button.toggleClass('active');
             });
         }
     }

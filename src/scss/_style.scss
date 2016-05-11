@@ -299,6 +299,25 @@ header {
     }
 }
 
+.breadcrumb {
+    @include clearfix;
+    border-bottom: 1px solid $gray-line;
+    background: $gray-bg;
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+
+        + li:before {
+            content: ">\00a0";
+            padding: 0 5px;
+        }
+    }
+}
+
 .page-header {
     color: $blue;
 }
