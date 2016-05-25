@@ -39,7 +39,7 @@ gulp.task('javascript', () => {
         .src('src/js/*.js')
         .pipe(eslint('.eslintrc.json'))
         .pipe(eslint.format())
-        .pipe(babel())
+        .pipe(babel({presets: ['es2015']}))
         .pipe(gulpif(production, uglify()))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist/js'));
