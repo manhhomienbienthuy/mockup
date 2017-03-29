@@ -1,0 +1,564 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    @include sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    background: $true-white;
+    color: $text;
+    line-height: 2;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    // don't active mobile styles for larger screens
+    @include respond-min($screen-medium) {
+        min-width: $screen-medium;
+    }
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+
+    &:visited {
+        color: $blue;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: lighten($blue, 10%);
+        text-decoration: underline;
+    }
+
+    .active & {
+        color: lighten($blue, 10%);
+    }
+}
+
+::selection {
+    background: $selection-bg;
+}
+
+ul li,
+ol li {
+    margin-top: 1em;
+}
+
+dl {
+    margin: 2em 0 0.7em ;
+
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin: 0.2em 0 1.2em 1.5em;
+        padding: 0;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    border-bottom: 1px solid $gray-line;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5,
+h6 {
+    font-size: 1rem;
+}
+
+tt,
+code,
+kbd,
+pre,
+samp {
+    @include monospace;
+    color: $text;
+    background: $gray-bg;
+    border-radius: 0.25rem;
+    padding: 0.2em 0.4em;
+}
+
+blockquote {
+    padding: 0.7em 1.2em;
+    margin: 1.25em 0 1.2em;
+    border-left: 0.3em solid $gray-line;
+    color: $text-light;
+}
+
+table {
+    border-collapse: collapse;
+
+    caption {
+        font-size: 0.9em;
+        font-style: italic;
+        line-height: 1.3;
+    }
+
+    td {
+        padding: 0.5em 1em;
+        border: 1px solid $gray-line;
+    }
+
+    th {
+        @extend td;
+        background: $gray-bg;
+    }
+}
+
+mark {
+    padding: 0.25em 0.5em;
+    color: $text;
+    background: $highlight-bg;
+}
+
+.container {
+    @include clearfix;
+    padding: 0.5rem;
+
+    @include respond-min($screen-medium) {
+        margin: 0 auto;
+        max-width: 1400px;
+        width: 85%;
+    }
+}
+
+header {
+    border-bottom: 1px solid $gray-line;
+    line-height: 1.3;
+    font-size: 0.8rem;
+
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover,
+        &:active,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        background: $true-white;
+        padding: 0;
+    }
+
+    .logo {
+        display: flex;
+        justify-content: flex-start;
+        margin-right: 1rem;
+        text-indent: 100%;
+        overflow: hidden;
+        background: url(#{$img-path}logo-small.png) 0 0 no-repeat;
+        width: 102px;
+        height: 40px;
+
+        @include respond-min($screen-medium) {
+            margin-top: 0.5rem;
+        }
+    }
+
+    .meta {
+        display: none;
+
+        @include respond-min($screen-large) {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: $text-light;
+            font-size: 0.75rem;
+            width: 12.5rem;
+            margin-right: 10rem;
+        }
+    }
+
+    .navigation-button {
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 1.5rem;
+        font-size: 1.5rem;
+
+        @include respond-min($screen-medium) {
+            display: none;
+        }
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+    }
+
+    nav {
+        display: flex;
+        flex: 1 0 100%;
+
+        @include respond-min($screen-medium) {
+            display: flex;
+            flex: 1 0 auto;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+
+    .mobile-navigation {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+
+        @include respond-min($screen-medium) {
+            max-height: none;
+            transition: none;
+        }
+
+        &.active {
+            max-height: 50rem;
+        }
+    }
+
+    .navigation {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        @include respond-min($screen-medium) {
+            position: relative;
+            display: flex;
+            flex: 1 0 auto;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        li {
+            display: block;
+            width: 100%;
+            margin-top: 0;
+            text-align: center;
+            border-top: 1px solid $gray-line;
+            padding: 1rem 0;
+
+            @include respond-min($screen-medium) {
+                border: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: nowrap;
+                flex: 1 0 auto;
+                width: auto;
+                justify-content: flex-end;
+            }
+        }
+    }
+}
+
+.breadcrumb {
+    @include clearfix;
+    border-bottom: 1px solid $gray-line;
+    background: $gray-bg;
+
+    ul {
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    li {
+        margin: 0;
+        display: inline-block;
+
+        + li:before {
+            content: ">\00a0";
+            padding: 0 5px;
+        }
+    }
+}
+
+.page-header {
+    color: $blue;
+}
+
+footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid $gray-line;
+
+    .links {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        margin: 0 0 0 -2rem;
+
+        li {
+            margin: 0 0 0 2rem;
+        }
+    }
+
+    .socials {
+        @extend .links;
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .copyright,
+    i {
+        text-align: center;
+        color: $text-light;
+    }
+}
+
+$back-top-top-radius: 1.25rem;
+.back-to-top {
+    display: none;
+    width: $back-top-top-radius * 2;
+    height: $back-top-top-radius * 2;
+    border-radius: $back-top-top-radius;
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+    background: lighten(#000, 30%);
+    text-align: center;
+    opacity: 0.4;
+
+    i {
+        margin-top: $back-top-top-radius / 5;
+        color: $true-white;
+        font-size: $back-top-top-radius * 1.25;
+    }
+}
+
+form {
+    font-size: 1rem;
+
+    // Global input styles
+    input[type="search"],
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="month"],
+    input[type="week"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    textarea {
+        appearance: none;
+        background: #fff;
+        border: 1px solid $gray-line;
+        border-radius: 0.25rem;
+        cursor: auto;
+        display: block;
+        font-weight: normal;;
+        margin: 1rem 0;
+        padding: 0.5rem 1rem;
+        text-indent: 0;
+        vertical-align: middle;
+        width: 100%;
+
+        &::-ms-clear {
+            display: none;
+        }
+
+        &:active,
+        &:focus {
+            outline: none;
+            border-color: $blue;
+        }
+    }
+
+    textarea {
+        height: auto;
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+        margin-right: 0.5rem;
+        outline: none;
+    }
+
+    select {
+        border: 1px solid $gray-line;
+        background: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        font-size: 1rem;
+    }
+
+    fieldset {
+        border: 1px solid $gray-line;
+        border-radius: 0.25rem;
+        margin: 1rem 0;
+    }
+
+    legend {
+        padding: 0 0.5rem;
+    }
+
+    div {
+        margin: 1rem 0;
+    }
+}
+
+::placeholder {
+    color: $text-light;
+}
+
+.form-general {
+    // Multi-input forms with seperate submit button.
+    fieldset {
+        max-width: 45rem;
+        border: 0;
+        padding: 0;
+        margin: 1rem 0;
+
+        input[type="search"],
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="url"] {
+            margin: 1rem 0;
+        }
+    }
+}
+
+.form-input {
+    // Class for singple-entry form with inside submit button
+    position: relative;
+
+    button {
+        background: none;
+        border: none;
+        color: lighten($text-light, 15%);
+        padding: 0;
+        position: absolute;
+        right: 3%;
+        top: 0;
+        width: 3rem;
+        font-size: 1.5rem;
+
+        @include respond-min($screen-medium) {
+            right: 1%;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background: none;
+            color: $blue;
+            outline: none;
+        }
+    }
+
+    input:focus ~ button {
+        color: $blue;
+    }
+}
+
+.button {
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0 1em;
+    border-radius: 0.25em;
+
+    &:focus,
+    &:active {
+        outline: thin dotted;
+        outline: 0.4em auto -webkit-focus-ring-color;
+        outline-offset: -0.125em;
+    }
+}
+
+.button-primary {
+    color: $true-white;
+    background: $blue;
+    border-color: $blue;
+
+    &:hover,
+    &:focus {
+        background: lighten($blue, 10%);
+        border-color: lighten($blue, 10%);
+    }
+}
+
+.button-secondary {
+    color: $blue;
+    background: $true-white;
+    border-color: $blue;
+
+    &:hover,
+    &:focus {
+        background: $gray-bg;
+    }
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.warning {
+    text-align: center;
+    background: $highlight-bg;
+    padding: 1rem 0;
+}
